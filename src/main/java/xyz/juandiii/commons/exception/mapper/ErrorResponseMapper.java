@@ -22,7 +22,7 @@ public class ErrorResponseMapper implements ExceptionMapper<ServiceException> {
                     .entity(errorObject(exception.getMessage(), code))
                     .build();
             case 401:
-                    return Response.status(400)
+                    return Response.status(401)
                         .entity(errorObject(exception.getMessage(), code))
                         .build();
             case 404:
