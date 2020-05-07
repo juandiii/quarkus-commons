@@ -1,0 +1,26 @@
+<settings>
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>${USER_JIRA}</username>
+            <password>${PWD_JIRA}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>ossrh</id>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <!-- Your Key Password -->
+                <!-- <gpg.passphrase></gpg.passphrase> -->
+                <!-- If not using the default key do the following -->
+                <!-- <gpg.keyname></gpg.keyname> -->
+                <gpg.passphraseServerId>${GPG_PASSPHRASE}</gpg.passphraseServerId>
+                <gpg.defaultKeyring>false</gpg.defaultKeyring>
+            </properties>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>ossrh</activeProfile>
+    </activeProfiles>
+</settings>
