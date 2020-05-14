@@ -1,11 +1,9 @@
 package xyz.juandiii.commons.utils;
 
-
 public class Pagination {
   private Integer page;
   private Integer limit;
   private boolean more;
-
 
   public Pagination(Integer page, Integer limit, boolean more) {
     this.page = page;

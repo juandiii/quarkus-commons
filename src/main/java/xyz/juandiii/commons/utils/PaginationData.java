@@ -1,27 +1,23 @@
 package xyz.juandiii.commons.utils;
 
-public class PaginationData {
-  private Object data;
+public class PaginationData<T> {
+  private T data;
   private Integer recordsTotal;
   private Integer recordsFiltered;
   private Pagination pagination;
 
-  public PaginationData(Object data, Integer recordsTotal, Integer recordsFiltered, Pagination pagination) {
+  public PaginationData(T data, Integer recordsTotal, Integer recordsFiltered, Pagination pagination) {
     this.data = data;
     this.recordsTotal = recordsTotal;
     this.recordsFiltered = recordsFiltered;
     this.pagination = pagination;
   }
 
-  public static PaginationData paginationResponse(Object data, Integer recordsTotal, Integer recordsFiltered, Integer page, Integer limit, Integer offset) {
-    return new PaginationData(data, recordsTotal, recordsFiltered, Pagination.paginationObject(page, limit, (offset + limit) < recordsFiltered));
-  }
-
-  public Object getData() {
+  public T getData() {
     return data;
   }
 
-  public PaginationData setData(Object data) {
+  public PaginationData setData(T data) {
     this.data = data;
     return this;
   }

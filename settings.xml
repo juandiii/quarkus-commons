@@ -12,7 +12,7 @@
             <properties>
                 <gpg.executable>gpg</gpg.executable>
                 <!-- Your Key Password -->
-                <!-- <gpg.passphrase></gpg.passphrase> -->
+<!--                <gpg.passphrase>${GPG_PASSPHRASE}</gpg.passphrase>-->
                 <!-- If not using the default key do the following -->
                 <!-- <gpg.keyname></gpg.keyname> -->
                 <gpg.passphraseServerId>${GPG_PASSPHRASE}</gpg.passphraseServerId>
