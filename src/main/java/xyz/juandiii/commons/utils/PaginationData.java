@@ -6,11 +6,11 @@ public class PaginationData<T> {
   private Integer recordsFiltered;
   private Pagination pagination;
 
-  public PaginationData(T data, Integer recordsTotal, Integer recordsFiltered, Pagination pagination) {
+  public PaginationData(T data, Integer recordsTotal, Integer recordsFiltered, Integer page, Integer limit, Integer offset) {
     this.data = data;
     this.recordsTotal = recordsTotal;
     this.recordsFiltered = recordsFiltered;
-    this.pagination = pagination;
+    this.pagination = Pagination.paginationObject(page, limit, (offset + limit) < recordsFiltered);
   }
 
   public T getData() {
