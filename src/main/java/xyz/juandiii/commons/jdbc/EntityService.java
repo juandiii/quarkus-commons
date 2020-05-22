@@ -1,18 +1,16 @@
 package xyz.juandiii.commons.jdbc;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.List;
 
 public interface EntityService<T, R> {
 
-  Uni<T> getById(R id);
+  T getById(R id);
 
-  Uni<T> add(T object);
+  T add(T object);
 
-  Uni<List<T>> getAll();
+  List<T> getAll();
 
-  Uni<T> update(R id, T object);
+  T update(R id, T object);
 
-  Uni<Void> delete(R id);
+  void delete(R id);
 }
