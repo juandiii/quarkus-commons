@@ -31,7 +31,7 @@
 
     <groupId>xyz.juandiii</groupId>
     <artifactId>commons</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>jar</packaging>
 
     <properties>
