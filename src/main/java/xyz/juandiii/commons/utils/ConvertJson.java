@@ -17,7 +17,7 @@ public class ConvertJson {
      * @return Object
      * @throws Exception Throw exception
      */
-    public static Map<String, Object> toMap(Object obj) throws Exception {
+    public static <T> Map<String, Object> toMap(T obj) throws Exception {
         String result = jsonb.toJson(obj);
         return JsonUtil.parseJson(result);
     }
@@ -29,7 +29,7 @@ public class ConvertJson {
      * @return String
      * @throws Exception Throw exception
      */
-    public static String toJson(Object obj) throws Exception {
+    public static <T> String toJson(T obj) throws Exception {
         return jsonb.toJson(obj);
     }
 

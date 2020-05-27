@@ -4,7 +4,7 @@ import javax.ws.rs.core.Response;
 
 public abstract class Controller {
 
-    protected Response successResponse(Object object, String message, boolean hasErrors, int code) {
+    protected <T> Response successResponse(T object, String message, boolean hasErrors, int code) {
         return Response.status(code)
             .entity(RestResponse.toResponse(object, message, hasErrors, code))
             .build();

@@ -2,15 +2,21 @@ package xyz.juandiii.commons.utils;
 
 import java.util.ArrayList;
 
-public class RestResponse {
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
+@RegisterForReflection
+public class RestResponse<T> {
 
     private String message;
     private Boolean hasErrors;
     private Integer code;
-    private Object data;
+    private T data;
     private Object errors;
 
-    public RestResponse(Object data, String message, Boolean hasErrors, Integer code) {
+    public RestResponse() {
+    }
+
+    public RestResponse(T data, String message, Boolean hasErrors, Integer code) {
         this.message = message;
         this.hasErrors = hasErrors;
         this.code = code;
@@ -18,8 +24,8 @@ public class RestResponse {
         this.errors = new ArrayList<>();
     }
 
-    public static RestResponse toResponse(Object data, String message, Boolean hasErrors, Integer code) {
-        return new RestResponse(data, message, hasErrors, code);
+    public static <T> RestResponse<T> toResponse(T data, String message, Boolean hasErrors, Integer code) {
+        return new RestResponse<T>(data, message, hasErrors, code);
     }
 
     public String getMessage() {
@@ -34,31 +40,34 @@ public class RestResponse {
         return hasErrors;
     }
 
-    public void setHasErrors(Boolean hasErrors) {
+    public RestResponse<T> setHasErrors(Boolean hasErrors) {
         this.hasErrors = hasErrors;
+        return this;
     }
 
     public Integer getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public RestResponse<T> setCode(Integer code) {
         this.code = code;
+        return this;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public RestResponse<T> setData(T data) {
         this.data = data;
+        return this;
     }
 
     public Object getErrors() {
         return errors;
     }
 
-    public RestResponse setErrors(Object errors) {
+    public RestResponse<T> setErrors(Object errors) {
         this.errors = errors;
         return this;
     }
